@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Studi Kasus derehana by izra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 100px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      if (name == "") {
+        alert("Nama harus diisi!");
+        return false;
+      }
+    }
+
+    function showMessage() {
+      alert("Halaman berhasil dimuat!");
+    }
+
+    function showAlert() {
+      alert("Anda melakukan double klik!");
+    }
+
+    function changeColor(element) {
+      element.classList.add("highlight");
+    }
+
+    function restoreColor(element) {
+      element.classList.remove("highlight");
+    }
+  </script>
+</head>
+<body onload="showMessage()">
+  <h1>Studi Kasus sederhana</h1>
+
+  <form onsubmit="return validateForm()">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name">
+
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <p ondblclick="showAlert()" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Double klik atau arahkan kursor di atas teks ini.</p>
+</body>
+</html>
